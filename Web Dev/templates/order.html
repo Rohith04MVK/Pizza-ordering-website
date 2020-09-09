@@ -1,0 +1,61 @@
+<html style="background-image: url(static/images/pizza3.jpg);background-size: cover;background-repeat: repeat;">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .button {
+            border-radius: 4px;
+            background-color: #f41e1e;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 28px;
+            padding: 20px;
+            width: 200px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<head>
+    <title> Menu </title>
+    <h1
+        style="color: yellowgreen; text-align: center; font-size: 2cm; font-family: Georgia, 'Times New Roman', Times, serif;">
+        Pick your toppings. </h1>
+    <form method="POST" action="{{ url_for('order') }}">
+
+        <div><input type="checkbox" id="vehicle1" class="lagreCheckbox" name="checkbox1" value="Pepperoni"><label
+                style="font-size: 1cm; color: yellow; font-family: Georgia, 'Times New Roman', Times, serif; height: 20px; width: 20px;"
+                for="vehicle1"> <b>Pepperoni - 28₹</b>
+            </label> </div>
+
+            <div><input type="checkbox" id="vehicle1" name="checkbox1" value="Cheese"><label
+                style="font-size: 1cm; color: yellow; font-family: Georgia, 'Times New Roman', Times, serif;"
+                for="vehicle1">
+                <b> Cheese - 28₹
+            </label> </div>
+
+        <div><input type="checkbox" id="vehicle1" name="checkbox1" value="Bacon"><label
+                style="font-size: 1cm; color: yellow; font-family: Georgia, 'Times New Roman', Times, serif;"
+                for="vehicle1">
+                <b> Bacon - 28₹
+            </label> </div>
+        <div><input type="checkbox" id="vehicle1" name="checkbox1" value="Chilliflakes"><label
+                style="font-size: 1cm; color: yellow; font-family: Georgia, 'Times New Roman', Times, serif;"
+                for="vehicle1">
+                <b> Chilliflakes - Free!
+            </label> </div>
+        <div><input type="checkbox" id="vehicle1" name="checkbox1" value="Brocol"><label
+                style="font-size: 1cm; color: yellow; font-family: Georgia, 'Times New Roman', Times, serif;"
+                for="vehicle1"> <b>Brocol - 28₹
+            </label> </div>
+        <div><input type="checkbox" id="checkbox1" name="vehicle1" value=Tomatoes""><label
+                style="font-size: 1cm; color: yellow; font-family: Georgia, 'Times New Roman', Times, serif;"
+                for="vehicle1"> <b>Tomatoes - 28₹
+            </label> </div>
+        <div><input type="submit" class="button" value='Place Order'>
+        </div>
+    </form>
+</head>

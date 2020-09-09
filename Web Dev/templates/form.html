@@ -1,0 +1,42 @@
+<html style="background-image:url(static/images/pincodemap.png);background-size: cover;background-repeat: no-repeat;">
+
+<head>
+    <title>Pincode</title>
+</head>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .button {
+            border-radius: 4px;
+            background-color: #f41e1e;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 28px;
+            padding: 20px;
+            width: 200px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Please enter your pincode</h1>
+    <form method="POST" action="{{ url_for('form') }}">
+        {{ form.hidden_tag() }}
+        {{ form.csrf_token }}
+        <h1>{{ form.pincode.label }}
+        {{ form.pincode }}</h1>
+        <ul style="color: red;">
+    {% for error in form.pincode.errors %}
+        <h2><b>{{error}}</b></h2>
+    {% endfor %}
+        </ul>
+        <input class="button" type="submit" value='Submit'>
+    </form>
+</body>
+
+</html>

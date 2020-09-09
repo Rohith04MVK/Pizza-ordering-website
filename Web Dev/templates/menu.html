@@ -1,0 +1,50 @@
+<html style="background-image: url(static/images/pizza3.jpg);background-size: cover;background-repeat: repeat;">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .button {
+            border-radius: 4px;
+            background-color: #f41e1e;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 28px;
+            padding: 20px;
+            width: 200px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<head>
+    <title> Menu </title>
+    <h1 style="font-size: 1cm; color:yellowgreen;font-family: Georgia, 'Times New Roman', Times, serif;font-size: 1cm;">Enter the Pizza you
+        would like to order</h1>
+    <h1 style="font-size: 1cm; color:yellow;font-family: Georgia, 'Times New Roman', Times, serif;">Margherita - 280₹
+    </h1>
+    <h1 style="font-size: 1cm; color:yellow;font-family: Georgia, 'Times New Roman', Times, serif;">Pepperoni Feast -
+        290₹</h1>
+    <h1 style="font-size: 1cm; color:yellow;font-family: Georgia, 'Times New Roman', Times, serif;">Veggie Supreme -
+        340₹</h1>
+    <h1 style="font-size: 1cm; color:yellow;font-family: Georgia, 'Times New Roman', Times, serif;">Ultimate chicken -
+        305₹</h1>
+    <h1 style="font-size: 1cm; color:yellow;font-family: Georgia, 'Times New Roman', Times, serif;">Original Pan - 210₹
+    </h1>
+    <form method="POST" action="{{ url_for('menu') }}">
+        {{ form.csrf_token }}
+        <h1 style="font-size: 1cm; color:yellow;font-family: Georgia, 'Times New Roman', Times, serif;">
+            {{ form.pizza.label }}
+         {{ form.pizza }} </h1>
+        <ul style="color: red; size: 0.5cm;">
+            {% for error in form.pizza.errors %}
+            <b>{{error}}</b>
+            {% endfor %}
+        </ul>
+        <input style="align-items: center;" type="submit" class="button" value='Order'>
+    </form>
+</head>
+
+</html>
