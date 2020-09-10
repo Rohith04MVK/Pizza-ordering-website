@@ -25,7 +25,7 @@ def get_pincode():
 
 def pizza_validate(form, field):
     if field.data not in pizza:
-        raise ValidationError('Invalid input')
+        raise ValidationError('Enter the right name if the pizza')
 
 
 app = Flask(__name__)
@@ -65,20 +65,22 @@ def welcome():
 @app.route('/menu', methods=['GET', 'POST'])
 def menu():
     form = pizza_form()
+    pizzas = price
     global piz
     piz = form.pizza.data
     if form.validate_on_submit():
         return redirect(url_for('order'))
-    return render_template('menu.html', form=form)
+    return render_template('menu.html', form=form, pizzas=pizzas)
 
 
 @app.route('/order', methods=['GET', 'POST'])
 def order():
-    global top
+    global top # scope of this variable is global
+    toppin = toppings_price
     top = (request.form.getlist('checkbox1'))
     if request.method == 'POST' and len(top) <= 4:
         return redirect(url_for('done'))
-    return render_template('order.html')
+    return render_template('order.html', toppin=toppin)
 
 
 @app.route('/done')

@@ -25,36 +25,12 @@
         style="color: yellowgreen; text-align: center; font-size: 2cm; font-family: Georgia, 'Times New Roman', Times, serif;">
         Pick your toppings. </h1>
     <form method="POST" action="{{ url_for('order') }}">
-
+    {% for topping, price in toppin.items() %}
         <div><input type="checkbox" id="vehicle1" class="lagreCheckbox" name="checkbox1" value="Pepperoni"><label
                 style="font-size: 1cm; color: yellow; font-family: Georgia, 'Times New Roman', Times, serif; height: 20px; width: 20px;"
-                for="vehicle1"> <b>Pepperoni - 28₹</b>
+                for="vehicle1"> <b>{{ topping }}:{{ price }}</b>
             </label> </div>
-
-            <div><input type="checkbox" id="vehicle1" name="checkbox1" value="Cheese"><label
-                style="font-size: 1cm; color: yellow; font-family: Georgia, 'Times New Roman', Times, serif;"
-                for="vehicle1">
-                <b> Cheese - 28₹
-            </label> </div>
-
-        <div><input type="checkbox" id="vehicle1" name="checkbox1" value="Bacon"><label
-                style="font-size: 1cm; color: yellow; font-family: Georgia, 'Times New Roman', Times, serif;"
-                for="vehicle1">
-                <b> Bacon - 28₹
-            </label> </div>
-        <div><input type="checkbox" id="vehicle1" name="checkbox1" value="Chilliflakes"><label
-                style="font-size: 1cm; color: yellow; font-family: Georgia, 'Times New Roman', Times, serif;"
-                for="vehicle1">
-                <b> Chilliflakes - Free!
-            </label> </div>
-        <div><input type="checkbox" id="vehicle1" name="checkbox1" value="Brocol"><label
-                style="font-size: 1cm; color: yellow; font-family: Georgia, 'Times New Roman', Times, serif;"
-                for="vehicle1"> <b>Brocol - 28₹
-            </label> </div>
-        <div><input type="checkbox" id="checkbox1" name="vehicle1" value=Tomatoes""><label
-                style="font-size: 1cm; color: yellow; font-family: Georgia, 'Times New Roman', Times, serif;"
-                for="vehicle1"> <b>Tomatoes - 28₹
-            </label> </div>
+    {% endfor %}
         <div><input type="submit" class="button" value='Place Order'>
         </div>
     </form>
