@@ -23,21 +23,15 @@
     <title> Menu </title>
     <h1 style="font-size: 1cm; color:yellowgreen;font-family: Georgia, 'Times New Roman', Times, serif;font-size: 1cm;">Enter the Pizza you
         would like to order</h1>
-    <h1 style="font-size: 1cm; color:yellow;font-family: Georgia, 'Times New Roman', Times, serif;">Margherita - 280₹
-    </h1>
-    <h1 style="font-size: 1cm; color:yellow;font-family: Georgia, 'Times New Roman', Times, serif;">Pepperoni Feast -
-        290₹</h1>
-    <h1 style="font-size: 1cm; color:yellow;font-family: Georgia, 'Times New Roman', Times, serif;">Veggie Supreme -
-        340₹</h1>
-    <h1 style="font-size: 1cm; color:yellow;font-family: Georgia, 'Times New Roman', Times, serif;">Ultimate chicken -
-        305₹</h1>
-    <h1 style="font-size: 1cm; color:yellow;font-family: Georgia, 'Times New Roman', Times, serif;">Original Pan - 210₹
-    </h1>
-    <form method="POST" action="{{ url_for('menu') }}">
+    {% for k, v in pizzas.items() %} 
+        <h1 style="font-size: 1cm; color:yellow;font-family: Georgia, 'Times New Roman', Times, serif;">{{k}}:{{v}}
+        </h1>
+    {% endfor %}
+    <form method="POST", action="{{ url_for('menu') }}">
         {{ form.csrf_token }}
         <h1 style="font-size: 1cm; color:yellow;font-family: Georgia, 'Times New Roman', Times, serif;">
-            {{ form.pizza.label }}
-         {{ form.pizza }} </h1>
+        {{ form.pizza.label }}
+        {{ form.pizza }} </h1>
         <ul style="color: red; size: 0.5cm;">
             {% for error in form.pizza.errors %}
             <b>{{error}}</b>
