@@ -26,7 +26,7 @@
         Pick your toppings. </h1>
     <form method="POST" action="{{ url_for('order') }}">
     {% for topping, price in toppin.items() %}
-        <div><input type="checkbox" id="vehicle1" class="lagreCheckbox" name="checkbox1" value="Pepperoni"><label
+        <div><input type="checkbox" id="vehicle1" class="lagreCheckbox" name="checkbox1" value="{{ topping }}"><label
                 style="font-size: 1cm; color: yellow; font-family: Georgia, 'Times New Roman', Times, serif; height: 20px; width: 20px;"
                 for="vehicle1"> <b>{{ topping }}:{{ price }}</b>
             </label> </div>
