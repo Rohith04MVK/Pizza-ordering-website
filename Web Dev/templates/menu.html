@@ -24,7 +24,7 @@
     <h1 style="font-size: 1cm; color:yellowgreen;font-family: Georgia, 'Times New Roman', Times, serif;font-size: 1cm;">Enter the Pizza you
         would like to order</h1>
     {% for k, v in pizzas.items() %} 
-        <h1 style="font-size: 1cm; color:yellow;font-family: Georgia, 'Times New Roman', Times, serif;">{{k}}:{{v}}
+        <h1 style="font-size: 1cm; color:yellow;font-family: Georgia, 'Times New Roman', Times, serif;">{{k}}: {{v}}₹
         </h1>
     {% endfor %}
     <form method="POST", action="{{ url_for('menu') }}">
