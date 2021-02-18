@@ -6,10 +6,13 @@ from wtforms.validators import DataRequired, ValidationError, InputRequired
 import requests
 toppings = ["Pepperoni", "Cheese", "Tomatoes",
             "Brocol", "Bacon", "Chilliflakes"]
+
 toppings_price = {"Pepperoni": 28, "Cheese": 28,
                   "Tomatoes": 28, "Brocol": 28, "Bacon": 28, "Chilliflakes": 0}
+
 price = {"Margherita": 280, "Pepperoni Feast": 290,
          "Veggie Supreme": 340, "Ultimate chicken": 305, "Original Pan": 210}
+
 pizza = ["Margherita", "Pepperoni Feast",
          "Veggie Supreme", "Ultimate chicken", "Original Pan"]
 
